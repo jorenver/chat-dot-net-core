@@ -1,0 +1,15 @@
+<div [ngClass]="message.owner ? 'chat-message-right pb-4': 'chat-message-left pb-4'">
+    
+    <div>
+        <img src="/assets/images/no-user.jpeg" class="rounded-circle mr-1" alt="{{message.ownerName}}" width="40" height="40">
+        <div class="text-muted small text-nowrap mt-2">{{message.createDate | date:'shortTime'}}</div>
+    </div>
+
+    <div [ngClass]="message.owner ? 'flex-shrink-1 bg-light rounded py-2 px-3 mr-3': 'flex-shrink-1 bg-light rounded py-2 px-3 ml-3'">
+        
+        <div class="font-weight-bold mb-1">
+            {{message | messageUserName}} 
+        </div>
+        {{message.text}}
+    </div>
+</div>
